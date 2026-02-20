@@ -1,0 +1,29 @@
+.dottedLine {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 3; 
+}
+
+
+
+/* DL_04 */
+.dl04 {
+  left: 520px;
+  top: 36px;
+  width: 80px;
+}
+
+/* DL_05 */
+.dl05 {
+  left: 490px;
+  top: 235px;
+  width: 37px;
+}
+
+/* DL_06 */
+.dl06 {
+  left: 640px;
+  top: 120px;
+  width: 90px;
+}

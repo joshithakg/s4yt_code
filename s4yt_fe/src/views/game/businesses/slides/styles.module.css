@@ -1,0 +1,154 @@
+.optionsView {
+  min-height: 350px;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.optionsView > div p {
+  font-family: "Corbal", Arial;
+  font-size: 18px;
+  color: var(--pbrown);
+  text-align: left;
+}
+
+.optionsView form {
+  margin-top: 20px;
+}
+
+.optionsView form button {
+  position: relative;
+  width: 110px;
+  height: 36px;
+  background: url("/images/banner-btn-brown.webp") no-repeat center center / 100% 100%;
+  font-size: 17px;
+  cursor: pointer;
+}
+.optionsView form button::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: 45%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  font-family: "Night Zone", Arial;
+  color: var(--white);
+  white-space: nowrap;
+}
+.optionsView form button:hover {
+  background: url("/images/banner-btn-hover.webp") no-repeat center center / 100% 100%;
+}
+.optionsView form button:active {
+  background: url("/images/banner-btn-beige.webp") no-repeat center center / 100% 100%;
+}
+.optionsView form button:disabled {
+  background: url("/images/banner-btn-beige.webp") no-repeat center center / 100% 100%;
+  cursor: not-allowed;
+}
+
+.optionsView.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.optionsView.challenge {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.optionsView.challenge > div {
+  display: grid;
+  height: 100%;
+}
+.optionsView.challenge > div button.viewChallenge {
+  justify-self: center;
+  font-size: var(--heading-28);
+  margin-bottom: 1rem;
+}
+
+.optionsView.challenge > div p[data-submitted="true"] {
+  font-weight: 600;
+}
+.optionsView.challenge > div p[data-submitted="true"] span {
+  color: var(--status-green);
+}
+
+.optionsView.challenge form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.optionsView.challenge form label {
+  text-align: left;
+}
+.optionsView.challenge form div :global(.inputContainer) {
+  margin-bottom: 20px;
+}
+.optionsView.challenge form div :global(.inputContainer) input {
+  width: 100%;
+}
+.optionsView.challenge form button.instructions {
+  width: 150px;
+  font-size: 16px;
+}
+.optionsView.challenge form div small {
+  width: fit-content;
+  margin-top: 6px;
+}
+
+.optionsView.challenge .formBtns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  gap: 0.5rem;
+}
+
+.optionsView.meetUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+.optionsView.meetUp > div h3 {
+  font-family: "Corbel", Arial;
+  font-size: 36px;
+  color: var(--pbrown);
+  text-align: left;
+}
+.optionsView.meetUp > div p {
+  font-family: "Corbel", Arial;
+  font-size: 26px;
+}
+.optionsView.meetUp > div p:nth-child(2) {
+  margin-bottom: 1rem;
+}
+
+.optionsView.meetUp form {
+  display: flex;
+  flex-direction: column;
+}
+.optionsView.meetUp form div[role="radiogroup"] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.optionsView.meetUp form div[role="radiogroup"] div {
+  text-align: left;
+}
+.optionsView.meetUp form div[role="radiogroup"] div label,
+.optionsView.meetUp form div[role="radiogroup"] div input  {
+  cursor: pointer;
+}
+.optionsView.meetUp form div[role="radiogroup"] div input {
+  margin-right: 10px;
+}
+.optionsView.meetUp form div[role="radiogroup"] div input:disabled,
+.optionsView.meetUp form div[role="radiogroup"] div input:disabled + label {
+  cursor: not-allowed;
+}
+.optionsView.meetUp form button {
+  align-self: flex-end;
+}

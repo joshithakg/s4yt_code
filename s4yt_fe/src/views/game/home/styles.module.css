@@ -1,0 +1,81 @@
+.notViewed p,
+.viewed p {
+  color: var(--pbrown);
+}
+
+.notViewed,
+.viewed {
+  text-align: left;
+}
+.notViewed {
+  padding: 1.5rem 2rem 0 2rem;
+}
+@media screen and (max-width: 582px) {
+  .notViewed {
+    padding: 1rem 0 0;
+  }
+}
+
+.notViewed ul li::marker {
+  content: "X";
+  font-family: Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #cba26b;
+  margin-right: 0.5rem;
+}
+
+.notViewed ul li {
+  padding-left: 1rem;
+}
+.notViewed ul li:not(li:last-of-type) {
+  margin-bottom: 2.5rem;
+}
+
+.notViewed ul li p {
+  /* font-size: 42px; */
+  font-size: 40px;
+}
+
+.notViewed div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+
+.notViewed div .blockBtn {
+  font-family: "BebasNeue", Arial;
+  font-size: 18px;
+  color: var(--pbrown);
+  text-decoration: underline;
+  height: fit-content;
+  margin-right: 1rem;
+  margin-bottom: 0.75rem;
+}
+@media screen and (max-width: 391px) {
+  .notViewed div {
+    justify-content: flex-end;
+  }
+  .notViewed div .blockBtn {
+    margin-top: 1.5rem;
+  }
+}
+
+.viewed {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 1rem;
+  padding-block: 5rem;
+}
+@media screen and (max-width: 907px) {
+  .viewed {
+    padding-block: 3rem;
+  }
+}
+@media screen and (max-width: 470px) {
+  .viewed {
+    gap: 0.5rem 0;
+    padding-block: 2rem;
+  }
+}

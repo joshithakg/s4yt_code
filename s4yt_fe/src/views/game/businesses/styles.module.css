@@ -1,0 +1,209 @@
+p.failed {
+  font-size: var(--heading-28);
+  color: var(--form-red);
+  align-self: center;
+}
+
+.businesses {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 1rem;
+  padding-block: 2rem;
+}
+.businesses .businessContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transition: 0.2s ease opacity;
+}
+.businesses .businessContainer:hover,
+.businesses .businessContainer:active {
+  opacity: 0.65;
+}
+.businesses .businessContainer:active {
+  top: 2px;
+}
+.businesses .businessContainer[aria-disabled="true"] {
+  opacity: 0.65;
+  filter: grayscale(35%);
+  cursor: not-allowed;
+}
+@media screen and (max-width: 470px) {
+  .businessContainer {
+    transform: scale(0.9);
+  }
+}
+
+.businesses .businessContainer .answersCount {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  min-width: 26px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: var(--form-red);
+  font-family: "Corbal", Arial;
+  font-weight: 600;
+  color: var(--white);
+  z-index: 1;
+}
+.businesses .businessContainer img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+/* <======================================/ Details page \======================================> */
+.details {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.details .detailsHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.details .detailsHeader img {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 2rem;
+}
+.details .detailsHeader > div {
+  text-align: left;
+  color: var(--pbrown);
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.details .detailsHeader > div h2 {
+  font-size: 3rem;
+  font-family: "BebasNeue", Arial;
+}
+.details .detailsHeader > div p {
+  font-size: 18px;
+  font-family: "Corbal", Arial;
+  margin-bottom: 40px;
+}
+
+.details .detailsContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.details .detailsContent .detailsOptions {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.details .detailsContent .detailsOptions div[role="radiogroup"] label {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 1rem;
+  background: url("/images/banner-btn-beige.webp") no-repeat center center/contain;
+  cursor: pointer;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] label::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: 45%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  font-family: "Night Zone", Arial;
+  color: var(--white);
+  white-space: nowrap;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] label.video::after {
+  left: 50%;
+  font-size: 27px;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] label.challenge::after {
+  top: 47%;
+  font-size: 20px;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] label.wrapUp::after {
+  font-size: 15px;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] label:hover {
+  background: url("/images/banner-btn-hover.webp") no-repeat center center/contain;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] label[data-checked="true"] {
+  background: url("/images/banner-btn-brown.webp") no-repeat center center/contain;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] input[type="radio"] {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.details .detailsContent .detailsOptions div[role="radiogroup"] label input:focus-visible {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline: 5px auto rgba(0, 150, 255, 1);
+}
+
+.details .detailsContent .detailsContentView {
+  display: flex;
+  width: 70%;
+  max-width: 498.6px;
+  background-color: var(--pbrown-fade);
+}
+
+@media screen and (max-width: 800px) {
+  .details {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 662px) {
+  .details .detailsHeader {
+    flex-direction: column;
+    align-items: center;
+  }
+  .details .detailsHeader > div {
+    width: 100%;
+  }
+
+  .details .detailsContent {
+    flex-direction: column-reverse;
+  }
+
+  .details .detailsContent .detailsOptions {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .details .detailsContent .detailsOptions div[role="radiogroup"] {
+    width: 150px;
+    margin-left: 1.25rem;
+  }
+  .details .detailsContent .detailsOptions button:global(.backBtn) {
+    align-self: center;
+  }
+
+  .details .detailsContent .detailsContentView {
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .details {
+    width: 100%;
+  }
+}

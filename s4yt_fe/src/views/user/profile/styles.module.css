@@ -1,0 +1,193 @@
+.container {
+  text-align: left;
+}
+
+.container section {
+  display: grid;
+  padding-block: 1.5rem;
+  gap: 1rem;
+}
+@media screen and (min-width: 1161px) {
+  .container section {
+    grid-template-columns: minmax(min-content, 320px) 1fr;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .container section {
+    grid-template-columns: minmax(min-content, 282px) 1fr;
+  }
+}
+
+.container section:not(section:first-child) {
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 951px) {
+  .container section {
+    grid-template-columns: auto;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1161px) {
+  .container section > div,
+  .container section > span,
+  .container section > form {
+    min-width: 804px;
+  }
+}
+
+.container h2,
+.container h3,
+.container h4 {
+  color: var(--pbrown);
+}
+.container h2 {
+  font-size: 30px;
+}
+.container h3 {
+  font-family: "Night Zone", Arial;
+  font-weight: 400;
+}
+
+.coinsStatus div .coins {
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 6px;
+}
+.coinsStatus div .coins img {
+  max-width: 100px;
+}
+.coinsStatus div .coins p {
+  color: var(--pbrown);
+  line-height: 1.45;
+  opacity: 0.9;
+}
+.coinsStatus div .coins p .remain,
+.coinsStatus div .coins p .dub {
+  font-family: "Night Zone", Arial;
+  font-size: 14px;
+}
+.coinsStatus div .coins p .remain {
+  opacity: 1;
+}
+
+.coinsStatus div .statuses div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.coinsStatus div .statuses div:first-of-type {
+  margin-top: 2px;
+  border-radius: 6px 6px 0 0;
+}
+.coinsStatus div .statuses div:not(:first-child) {
+  border-top: none;
+}
+.coinsStatus div .statuses div:last-child {
+  border-radius: 0 0 6px 6px;
+}
+.coinsStatus div .statuses div h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.coinsStatus div .statuses div span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 25px;
+  min-height: 25px;
+  padding: 4px;
+  border-radius: 50%;
+  font-size: 14px;
+  background-color: #242424;
+  color: var(--white);
+}
+
+.referrals .noReferralsMsg {
+  position: relative;
+  top: 2px;
+  font-size: 18px;
+  color: var(--black);
+}
+
+.referrals .referralLink {
+  min-height: 40px;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: rgb(137, 87, 52, 0.1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.2s ease background-color, 0.2s ease color;
+}
+.referrals .referralLink:hover {
+  color: #1b1b1b;
+  text-decoration: underline;
+  background-color: rgb(137, 87, 52, 0.15);
+}
+
+.referrals h3 {
+  opacity: 0.9;
+}
+.referrals h3.move {
+  position: relative;
+  top: 13px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+table thead tr th {
+  padding: 1rem 0.5rem;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--black);
+}
+table tbody tr td {
+  max-width: 200px;
+  padding: 1rem 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  font-family: "Corbel", Arial;
+  color: var(--black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+table tbody tr td span {
+  display: none;
+}
+@media screen and (max-width: 525px) {
+  table {
+    min-width: 200px;
+  }
+
+  table thead tr th {
+    display: none;
+  }
+  table tbody tr:nth-of-type(2n) {
+    background-color: rgba(70, 70, 70, 0.1);
+  }
+  table tbody tr td {
+    display: grid;
+    grid-template-columns: 8ch auto;
+    max-width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  .interactions table tbody tr td {
+    grid-template-columns: 12ch auto;
+  }
+  table tbody tr td span {
+    display: inline-block;
+    font-weight: 600;
+  }
+}

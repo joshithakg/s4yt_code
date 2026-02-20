@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "Night Zone";
+  src:
+    url("/fonts/NightZone/night-zone.woff2") format("woff2"),
+    url("/fonts/NightZone/night-zone.woff") format("woff"),
+    url("/fonts/NightZone/night-zone.eot") format("embedded-opentype"),
+    url("/fonts/NightZone/night-zone.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/NightZone/night-zone.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  src:
+    url("/fonts/BebasNeue/bebasneue-regular.ttf") format("truetype"),
+    url("/fonts/BebasNeue/bebasneue-regular.eot") format("embedded-opentype"),
+    url("/fonts/BebasNeue/bebasneue-regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/BebasNeue/bebasneue-regular.woff2") format("woff2"),
+    url("/fonts/BebasNeue/bebasneue-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Corbel";
+  src:
+    url("/fonts/Corbel/corbel.woff2") format("woff2"),
+    url("/fonts/Corbel/corbel.woff") format("woff"),
+    url("/fonts/Corbel/corbel.eot") format("embedded-opentype"),
+    url("/fonts/Corbel/corbel.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Corbel/corbel.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Corbel";
+  src:
+    url("/fonts/Corbel/corbel-bold.woff2") format("woff2"),
+    url("/fonts/Corbel/corbel-bold.woff") format("woff"),
+    url("/fonts/Corbel/corbel-bold.eot") format("embedded-opentype"),
+    url("/fonts/Corbel/corbel-bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Corbel/corbel-bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+html {
+  background: url("/images/bg.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  color-scheme: light;
+
+  --pbrown: #895734;
+  --pbrown-fade: #e8c18e;
+  --sBeige: #ffe2b0;
+  --sBeige-fade: rgba(255, 226, 176, 0.5);
+  --cBorder: rgba(213, 213, 213, 0.5);
+  --black: #2c2c2c;
+  --white: #f5f5f5;
+  --form-red: #ff3939;
+  --status-green: #009846;
+  --orange: #e68b4b;
+
+  --heading-42: 42px;
+  --heading-38: 38px;
+  --heading-28: 28px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "BebasNeue", Arial;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+body * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: "Night Zone", Arial;
+  font-weight: 400;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+a.privacy {
+  font-family: "Corbel", Arial;
+  font-weight: 700;
+  text-align: left;
+  color: #404040;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+label {
+  font-size: 1.5rem;
+  color: var(--pbrown);
+}
+input:not(input[type="radio"]) {
+  padding: 0 6px;
+}
+select {
+  padding: 0 24px 0 6px;
+}
+input:not(input[type="radio"]),
+select {
+  border: 1px solid #d5d5d5;
+  height: 36px;
+  border-radius: 6px;
+  box-shadow: 6px 4px 4px rgba(8, 7, 7, 0.2);
+  font-size: 15px;
+  outline: none;
+  background: var(--white);
+}
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+.inputContainer img.warningIcon {
+  display: none;
+  position: absolute;
+  top: 4px;
+}
+.inputContainer.input img.warningIcon {
+  right: 6px;
+  width: 18px;
+  height: 18px;
+}
+.inputContainer.select img.warningIcon {
+  right: 20px;
+  width: 14px;
+  height: 14px;
+}
+select {
+  appearance: none;
+  background: var(--white) url("/images/caret-down.svg") no-repeat
+    calc(100% - 6px);
+}
+select[data-focused="true"]:not(select:disabled) {
+  background: var(--white) url("/images/caret-up.svg") no-repeat
+    calc(100% - 6px);
+}
+input:disabled,
+select:disabled {
+  opacity: 0.9;
+}
+small.formError {
+  display: none;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 5px;
+  color: var(--white);
+  background-color: var(--form-red);
+}
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border: 1px solid var(--form-red) !important;
+}
+input[aria-invalid="true"] {
+  padding: 0 25px 0 6px !important;
+}
+select[aria-invalid="true"] {
+  padding: 0 35px 0 6px !important;
+}
+input[aria-invalid="true"] ~ img.warningIcon,
+select[aria-invalid="true"] ~ img.warningIcon {
+  display: block;
+}
+input[aria-invalid="true"] + small.formError,
+input[matching-passwords="false"] + small.formError {
+  display: block;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+button.backBtn {
+  width: 150px;
+  height: 120px;
+  background: url("/images/btn_back.webp") no-repeat center
+    center/contain;
+}
+
+button.okBtn {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: url("/images/ok-btn-normal.webp") no-repeat center/contain;
+  border-radius: 60px 60px;
+  cursor: pointer;
+}
+button.okBtn:before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 341px;
+  background: url("/images/feather.webp") no-repeat center/contain;
+  pointer-events: none;
+}
+button.okBtn:not(.flip):before {
+  right: -220px;
+  bottom: 30px;
+  transform: rotate(10deg);
+}
+button.okBtn.flip:before {
+  right: -230px;
+  bottom: 60px;
+  transform: rotate(260deg) scaleY(-1);
+}
+button.okBtn:hover {
+  background: url("/images/ok-btn-hover.webp") no-repeat center/contain;
+}
+button.okBtn:active {
+  background: url("/images/ok-btn-press.webp") no-repeat center/contain;
+}
+button.okBtn[disabled] {
+  opacity: 0.35;
+}
+
+button.updateBtn {
+  position: relative;
+  font-family: "Corbel", Arial;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #6e757d;
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: 0.15s ease-in-out background-color;
+}
+button.updateBtn:hover {
+  background-color: rgba(110, 117, 125, 0.78);
+}
+button.updateBtn:active {
+  top: 2px;
+  background-color: #444;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: blur(2px);
+  z-index: 10;
+}
+.modalBackdrop .modal {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid var(--cBorder);
+  background-color: var(--sBeige);
+  animation: slideUpModal 0.86s ease-in-out forwards;
+  z-index: 10;
+  width: 96%;
+  max-width: 800px;
+  height: 100%;
+}
+.modalBackdrop .modal .exitBtn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #363636;
+  border-radius: 4px;
+  background-color: #eee;
+  color: var(--black);
+  transition: 0.2s ease background-color;
+  z-index: 1;
+}
+.modalBackdrop .modal .exitBtn::before {
+  content: "\2715";
+  font-size: 1rem;
+  color: var(--black);
+}
+.modalBackdrop .modal .exitBtn:hover {
+  background-color: #ff5b5b;
+}
+.modalBackdrop .modal .exitBtn:active {
+  top: -6px;
+}
+.modalBackdrop .modal .content {
+  height: inherit;
+  overflow: auto;
+}
+
+/* Use for clickable elements that doesn't have hover and active states. */
+.fade {
+  position: relative;
+  transition: 0.2s ease opacity;
+}
+.fade:hover,
+.fade:active {
+  opacity: 0.65;
+}
+.fade.move:active {
+  top: 3px;
+}
+
+@keyframes slideUpModal {
+  100% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-32px);
+  }
+  0% {
+    transform: translateY(80vh);
+  }
+}

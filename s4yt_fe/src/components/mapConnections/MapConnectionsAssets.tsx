@@ -1,0 +1,42 @@
+import React from "react";
+import { connect } from "react-redux";
+import type { GameConfigReduxState } from "@reducers/gameConfig";
+
+
+import DL_04 from "../../assets/images/NewMap/DL_04.png";
+import DL_05 from "../../assets/images/NewMap/DL_05.png";
+import DL_06 from "../../assets/images/NewMap/DL_06.png";
+
+import s from "./styles.module.css";
+
+interface Props {
+  gameConfig: GameConfigReduxState;
+}
+
+const MapConnectionsAssets: React.FC<Props> = ({ gameConfig }) => {
+  const lines = [
+    { src: DL_04, className: s.dl04 },
+    { src: DL_05, className: s.dl05 },
+    { src: DL_06, className: s.dl06 },
+  ];
+
+  return (
+    <>
+      {lines.map((line, i) => (
+        <img
+          key={i}
+          src={line.src}
+          alt={`dotted-line-${i + 1}`}
+          className={`${s.dottedLine} ${line.className}`}
+          draggable={false}
+        />
+      ))}
+    </>
+  );
+};
+
+const mapStateToProps = ({ gameConfig }: { gameConfig: GameConfigReduxState }) => ({
+  gameConfig,
+});
+
+export default connect(mapStateToProps)(MapConnectionsAssets);

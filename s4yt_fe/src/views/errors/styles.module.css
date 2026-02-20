@@ -1,0 +1,79 @@
+.errorLogo {
+  max-width: 325px;
+  max-height: 289px;
+}
+
+.text h1 {
+  font-family: "BebasNeue", Arial;
+  font-size: 9rem;
+  line-height: 0.8;
+  color: var(--pbrown);
+}
+
+.text h4 {
+  font-size: var(--heading-28);
+  color: var(--pbrown);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  max-width: 505px;
+}
+
+.responsiveBack {
+  display: none;
+}
+.text a {
+  display: block;
+}
+.text a,
+.responsiveBack {
+  position: relative;
+  left: 36px;
+  width: 360px;
+  height: 230px;
+  background: url("/images/btn-takemeback.webp") no-repeat center center/contain;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 754px) {
+  .errorLogo {
+    margin-bottom: 150px;
+  }
+
+  .text h1 {
+    font-size: 11rem;
+  }
+
+  .text h4 {
+    font-size: 34px;
+    max-width: unset;
+  }
+
+  .text a {
+    display: none;
+  }
+
+  .responsiveBack {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -11.5rem;
+    transform: translate(-50%, -50%) rotate(7deg);
+  }
+  .responsiveBack:hover,
+  .responsiveBack:active {
+    opacity: 0.65;
+  }
+  .responsiveBack:active {
+    bottom: -12rem;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .text h1 {
+    font-size: 9rem;
+  }
+
+  .text h4 {
+    font-size: var(--heading-28);
+  }
+}
