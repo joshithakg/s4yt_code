@@ -95,6 +95,7 @@ const Home: React.FC<Props> = ({ addNotification }) => {
                   to={content.to}
                   disableOn={content.disableOn}
                   position={content.position}
+                  size={content.size}
                 />
               ))}
             </div>
