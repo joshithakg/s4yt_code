@@ -11,11 +11,21 @@ import DL_06 from "../../assets/images/NewMap/DL_06.png";
 
 import s from "./styles.module.css";
 
+const LINE_KEYS = [
+  "profile",       // dl01
+  "play_and_get",  // dl02
+  "raffle",        // dl03
+  "partners",      // dl04
+  "play_and_get",  // dl05
+  "free_dublunes", // dl06
+];
+
 interface Props {
   gameConfig: GameConfigReduxState;
+  completedPages: Set<string>;
 }
 
-const MapConnectionsAssets: React.FC<Props> = ({ gameConfig }) => {
+const MapConnectionsAssets: React.FC<Props> = ({ completedPages }) => {
   const lines = [
     { src: DL_01, className: s.dl01 },
     { src: DL_02, className: s.dl02 },
@@ -32,7 +42,11 @@ const MapConnectionsAssets: React.FC<Props> = ({ gameConfig }) => {
           key={i}
           src={line.src}
           alt={`dotted-line-${i + 1}`}
-          className={`${s.dottedLine} ${line.className}`}
+          className={[
+            s.dottedLine,
+            line.className,
+            completedPages.has(LINE_KEYS[i]) ? s.completed : "",
+          ].join(" ")}
           draggable={false}
         />
       ))}
@@ -40,8 +54,15 @@ const MapConnectionsAssets: React.FC<Props> = ({ gameConfig }) => {
   );
 };
 
-const mapStateToProps = ({ gameConfig }: { gameConfig: GameConfigReduxState }) => ({
+const mapStateToProps = ({
   gameConfig,
+  userProgress,
+}: {
+  gameConfig: GameConfigReduxState;
+  userProgress?: { completedPages: string[] };
+}) => ({
+  gameConfig,
+  completedPages: new Set(userProgress?.completedPages ?? []),
 });
 
 export default connect(mapStateToProps)(MapConnectionsAssets);
